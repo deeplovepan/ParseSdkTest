@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
 
 @interface ViewController ()
 
@@ -18,6 +19,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"Song"];
+    [testObject setObject:@"懶人漫遊" forKey:@"name"];
+    [testObject save];
+
 }
 
 - (void)didReceiveMemoryWarning
